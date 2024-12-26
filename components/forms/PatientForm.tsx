@@ -8,6 +8,7 @@ import CustomFormField, { FormFieldType } from "../CustomFormField";
 import { UserFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import SubmitButton from "../SubmitButton";
+import { createUser } from "@/lib/actions/patient.actions";
 
 const PatientForm = () => {
   const router = useRouter();
@@ -31,11 +32,11 @@ const PatientForm = () => {
         phone: values.phone,
       };
 
-      // const newUser = await createUser(user);
+      const newUser = await createUser(user);
 
-      // if (newUser) {
-      //   router.push(`/patients/${newUser.$id}/register`);
-      // }
+      if (newUser) {
+        router.push(`/patients/${newUser.$id}/register`);
+      }
     } catch (error) {
       console.log(error);
     }
