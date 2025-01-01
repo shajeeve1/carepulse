@@ -7,6 +7,8 @@ import { Control } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
+import "react-datepicker/dist/react-datepicker.css";
+
 import { Checkbox } from "./ui/checkbox";
 import {
   FormControl,
